@@ -22,6 +22,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddCityFragment extends DialogFragment {
 
+    // The following function AddCityFragment and ARG_Position is from CHATgpt, "is there a way
+    // to send the int into the fragment public void onItemClick(AdapterView<?> adapterView, View
+    // view, int i, long l) { new AddCityFragment().show(getSupportFragmentManager(), "Add City");
+    // }", 2025-09-19
+
     private static final String ARG_POSITION = "position";
 
     public static AddCityFragment newInstance(int position) {
@@ -51,6 +56,7 @@ public class AddCityFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         int position = getArguments() != null ? getArguments().getInt(ARG_POSITION, -1) : -1;
+        //The above line is also from the same chatgpt prompt as before
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_add_city, null);
 
         EditText editCityName = view.findViewById(R.id.edit_text_city_text);

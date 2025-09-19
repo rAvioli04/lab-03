@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity implements AddCityFragment.A
         });
     }
 
+    // The following line AddCityFragment dialog = AddCityFragment.newInstance(i); is from CHATgpt, "is there a way
+    // to send the int into the fragment public void onItemClick(AdapterView<?> adapterView, View
+    // view, int i, long l) { new AddCityFragment().show(getSupportFragmentManager(), "Add City");
+    // }", 2025-09-19
+
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         AddCityFragment dialog = AddCityFragment.newInstance(i);
